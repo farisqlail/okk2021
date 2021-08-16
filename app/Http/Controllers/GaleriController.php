@@ -70,7 +70,7 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Galeri $galeri, $id)
+    public function edit(Galeri $galeri)
     {
         return view('admin.galeri.edit', compact('galeri'));
     }
@@ -82,14 +82,17 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Galeri $galeri, $id)
+    public function update(Request $request, $id)
     {
+        $galeri = Galeri::find($id);
+
         if($galeri->image){
             \Storage::delete($galeri->image);
         }
 
         Alert::success('success', 'Berhasil diubah');
 
+        
         $galeri->update([
             'title' => request('title'),
             'image' => request('image')->store('galeri'),

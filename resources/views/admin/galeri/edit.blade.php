@@ -11,7 +11,7 @@
             </div>
             <div class="card-body">
 
-            <form action="{{ route('galeriAdmin.update', $galeri) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('galeri.update', $galeri) }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 {{ method_field('PATCH') }}
 
@@ -27,7 +27,7 @@
                     
                     <div class="form-group">
                         <label for="">Thumbnail Galeri</label>
-                        <input type="file" class="form-control-file" required name="image" id="">
+                        <input type="file" class="form-control-file" required name="image" >
                     </div>
 
                     <div class="form-group">

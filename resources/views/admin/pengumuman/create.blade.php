@@ -26,7 +26,7 @@
                     
                     <div class="form-group">
                         <label for="">Isi Pengumuman</label>
-                        <textarea class="form-control" name="content" required rows="3"></textarea>
+                        <textarea name="deskripsi" id="deskripsi" required></textarea>
                     </div>
 
                     <div class="form-group">
@@ -42,6 +42,6 @@
 
     <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace( 'content', options );
+        CKEDITOR.replace( 'deskripsi' );
     </script>
 @endsection

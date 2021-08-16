@@ -17,7 +17,7 @@
     </div>
 
     <li class="nav-item active">
-        <a class="nav-link" href="{{ url('/DashboardAdmin') }}">
+        <a class="nav-link" href="{{ url('/admin') }}">
             <i class="fas fa-chart-line"></i>
             <span>Dashboard</span></a>
     </li>

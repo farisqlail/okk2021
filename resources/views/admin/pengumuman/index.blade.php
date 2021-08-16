@@ -24,7 +24,7 @@
                             <tr>
                                 <th>Title</th>
                                 <th>Category</th>
-                                <th>Content</th>
+                                <th>Deskripsi</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -32,7 +32,7 @@
                             <tr>
                                 <th>Title</th>
                                 <th>Category</th>
-                                <th>Content</th>
+                                <th>Deskripsi</th>
                                 <th>Actions</th>
                             </tr>
                         </tfoot>
@@ -41,11 +41,11 @@
                                 <tr>
                                     <td>{{ $data->title }}</td>
                                     <td>{{ $data->category }}</td>
-                                    <td>{!! Str::limit($data->content, 50) !!}</td>
+                                    <td>{!! Str::limit($data->deskripsi, 50) !!}</td>
                                     <td align="center">
-                                        <a href="{{ route('pengumumanAdmin.edit', $data->id) }}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                        <a href="{{ route('pengumuman.edit', $data->id) }}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
 
-                                        <a href="{{ route('galeri.delete', $data->id) }}"
+                                        <a href="{{ route('pengumuman.delete', $data->id) }}"
                                             class="btn btn-danger"><i class="fas fa-trash"></i></a>
 
                                     </td>

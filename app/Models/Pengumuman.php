@@ -13,6 +13,6 @@ class Pengumuman extends Model
         'title',
         'slug',
         'category',
-        'content'
+        'deskripsi'
     ];
 }

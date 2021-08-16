@@ -10,7 +10,7 @@
                         <h1>Pengumuman</h1>
                     </div>
                     <div class="col-md-6" data-aos="fade-up">
-                        <img src="./assets/img/Saly-16.png" class="img-fluid" alt="">
+                        <img src="{{ asset('./assets/img/Saly-16.png') }}" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
@@ -24,9 +24,9 @@
                         <div class="col-md-4">
                             <div class="card" style="background-color: #C1D6EA;">
                                 <div class="card-body">
-                                    <h3 style="color: #050607;"><b>{{ $data->title }}</b></h3>
+                                    <h3 style="color: #050607;"><a href="{{ route('pengumuman-show', $data) }}"><b>{{ $data->title }}</b></a></h3>
                                     <small style="color: #9EAAA8"><i>{{ $data->category }}</i></small><br><br>
-                                    <p style="color: #4F5551;">{!! Str::limit($data->content, 50) !!}</p>
+                                    <p style="color: #4F5551;">{!! Str::limit($data->deskripsi, 50) !!}</p>
 
                                     <a href="#" style="color: #083197;">lihat selengkapnya </a>
                                 </div>

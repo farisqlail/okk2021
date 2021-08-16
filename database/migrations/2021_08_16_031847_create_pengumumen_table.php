@@ -18,7 +18,7 @@ class CreatePengumumenTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('category');
-            $table->longText('content');
+            $table->longText('deskripsi');
             $table->timestamps();
         });
     }
