@@ -20,70 +20,22 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card" style="background-color: #C1D6EA;">
-                            <div class="card-body">
-                                <h3 style="color: #083197;">Title</h3>
-                                <p style="color: #8D9FAB;">deskrpsi dari blog ...</p>
-                                <br>
-                                <a href="#">lihat selengkapnya </a>
-                            </div>
-                        </div><br>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" style="background-color: #C1D6EA;">
-                            <div class="card-body">
-                                <h3 style="color: #083197;">Title</h3>
-                                <p style="color: #8D9FAB;">deskrpsi dari blog ...</p>
-                                <br>
-                                <a href="#">lihat selengkapnya </a>
-                            </div>
-                        </div><br>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" style="background-color: #C1D6EA;">
-                            <div class="card-body">
-                                <h3 style="color: #083197;">Title</h3>
-                                <p style="color: #8D9FAB;">deskrpsi dari blog ...</p>
-                                <br>
-                                <a href="#">lihat selengkapnya </a>
-                            </div>
-                        </div>
-                    </div>
-                </div><br>
+                    @foreach ($pengumuman as $data)
+                        <div class="col-md-4">
+                            <div class="card" style="background-color: #C1D6EA;">
+                                <div class="card-body">
+                                    <h3 style="color: #050607;"><b>{{ $data->title }}</b></h3>
+                                    <small style="color: #9EAAA8"><i>{{ $data->category }}</i></small><br><br>
+                                    <p style="color: #4F5551;">{!! Str::limit($data->content, 50) !!}</p>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card" style="background-color: #C1D6EA;">
-                            <div class="card-body">
-                                <h3 style="color: #083197;">Title</h3>
-                                <p style="color: #8D9FAB;">deskrpsi dari blog ...</p>
-                                <br>
-                                <a href="#">lihat selengkapnya </a>
-                            </div>
-                        </div><br>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" style="background-color: #C1D6EA;">
-                            <div class="card-body">
-                                <h3 style="color: #083197;">Title</h3>
-                                <p style="color: #8D9FAB;">deskrpsi dari blog ...</p>
-                                <br>
-                                <a href="#">lihat selengkapnya </a>
-                            </div>
-                        </div><br>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" style="background-color: #C1D6EA;">
-                            <div class="card-body">
-                                <h3 style="color: #083197;">Title</h3>
-                                <p style="color: #8D9FAB;">deskrpsi dari blog ...</p>
-                                <br>
-                                <a href="#">lihat selengkapnya </a>
-                            </div>
+                                    <a href="#" style="color: #083197;">lihat selengkapnya </a>
+                                </div>
+                            </div><br>
                         </div>
-                    </div>
-                </div>
+                    @endforeach
+
+
+                </div><br>
             </div>
 
         </section>
