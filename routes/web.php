@@ -2,17 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('jadwal', '\App\Http\Controllers\HomeController@jadwal')->name('jadwal-home');
+Route::get('pengumumanHome', '\App\Http\Controllers\HomeController@pengumumanHome')->name('pengumuman-home');
+Route::get('galeri', '\App\Http\Controllers\HomeController@galeriHome')->name('galeri-home');
+Route::get('tentang', '\App\Http\Controllers\HomeController@tentang')->name('tentang-home');
