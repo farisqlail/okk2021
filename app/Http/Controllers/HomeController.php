@@ -50,4 +50,9 @@ class HomeController extends Controller
 
         return view('tentang');
     }
+
+    public function tour(){
+
+        return view('360');
+    }
 }

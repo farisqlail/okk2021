@@ -86,7 +86,7 @@
               dengan menggunakan 360 camera.
             </p>
 
-            <a href="360.php" class="btn button-tour">Mulai Tour &nbsp; <i
+            <a href="{{ url('/tour') }}" class="btn button-tour">Mulai Tour &nbsp; <i
                 class="fas fa-arrow-right"></i></a>
           </div>
           <div class="col-md-6" data-aos="zoom-in">
