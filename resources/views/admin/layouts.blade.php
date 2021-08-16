@@ -1,36 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@farisqlail
-farisqlail /
-ppsi-sistem-hotel
-
-2
-0
-
-    0
-
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-
-    Settings
-
-ppsi-sistem-hotel/resources/views/admin/layouts.blade.php
-@farisqlail
-farisqlail configurasi
-Latest commit 47a3839 on May 20
-History
-1 contributor
-87 lines (68 sloc) 2.4 KB
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,9 +9,9 @@ History
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Dashboard Admin</title>
+  <title>Dashboard Admin OKK 2021</title>
   
-  <link rel="shortcut icon" href="{{ asset('assets/img/logo.png') }}" type="image/x-icon">
+  <link href="{{ asset('./assets/img/logo.png') }}" rel="icon">
   @include('admin.include._header-script')
 </head>
 
@@ -118,19 +85,3 @@ History
 </body>
 
 </html>
-
-    © 2021 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Status
-    Docs
-
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
-Loading complete

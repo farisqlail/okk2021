@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\Galeri;
 
 class GaleriController extends Controller
 {
@@ -13,7 +19,9 @@ class GaleriController extends Controller
      */
     public function index()
     {
-        //
+        $galeri = Galeri::all();
+
+        return view('admin.galeri.index', compact('galeri'));
     }
 
     /**
@@ -23,7 +31,7 @@ class GaleriController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.galeri.create');
     }
 
     /**
@@ -34,7 +42,15 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Alert::success('success', 'Berhasil upload');
+
+        Galeri::create([
+            'title' => request('title'),
+            'image' => request('image')->store('galeri'),
+            'link' => request('link')
+        ]);
+
+        return redirect()->route('galeriAdmin.index');
     }
 
     /**
@@ -54,9 +70,9 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Galeri $galeri, $id)
     {
-        //
+        return view('admin.galeri.edit', compact('galeri'));
     }
 
     /**
@@ -66,9 +82,21 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Galeri $galeri, $id)
     {
-        //
+        if($galeri->image){
+            \Storage::delete($galeri->image);
+        }
+
+        Alert::success('success', 'Berhasil diubah');
+
+        $galeri->update([
+            'title' => request('title'),
+            'image' => request('image')->store('galeri'),
+            'link' => request('link')
+        ]);
+
+        return redirect()->route('galeriAdmin.index');
     }
 
     /**
@@ -77,8 +105,12 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Galeri $galeri)
     {
-        //
+        $galeri->delete();
+        Alert::success('success', 'Berhasil dihapus');
+        \Storage::delete($galeri->image);
+
+        return redirect()->route('galeriAdmin.index');
     }
 }

@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\Pengumuman;
+
 
 class PengumumanController extends Controller
 {
@@ -13,7 +21,9 @@ class PengumumanController extends Controller
      */
     public function index()
     {
-        //
+        $pengumuman = Pengumuman::all();
+
+        return view('admin.pengumuman.index', compact('pengumuman'));
     }
 
     /**
@@ -23,7 +33,7 @@ class PengumumanController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pengumuman.create');
     }
 
     /**
@@ -34,7 +44,16 @@ class PengumumanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Alert::success('Success', 'Berhasil diupload');
+
+        Pengumuman::create([
+            'title' => request('title'),
+            'slug' => Str::slug(request('title')),
+            'category' => request('category'),
+            'content' => request('content')
+        ]);
+
+        return redirect()->route('pengumumanAdmin.index');
     }
 
     /**
