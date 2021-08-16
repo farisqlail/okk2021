@@ -66,7 +66,7 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
 
-    <div class="footer-top">`
+    <div class="footer-top">
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-info">
