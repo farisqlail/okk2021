@@ -46,11 +46,11 @@
 
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a class="nav-link scrollto active" href="{{ url('/') }}">Beranda</a></li>
-        <li><a class="nav-link scrollto" href="{{ url('/pengumumanHome') }}">Pengumuman</a></li>
-        <li><a class="nav-link scrollto" href="{{ url('/galeri') }}">Galeri</a></li>
-        <li><a class="nav-link scrollto" href="{{ url('/jadwal') }}">Jadwal</a></li>
-        <li><a class="nav-link scrollto" href="{{ url('/tentang') }}">Tentang</a></li> 
+        <li><a class="nav-link scrollto {{ Request::segment(1) === '/' ? 'active' : null }}" href="{{ url('/') }}">Beranda</a></li>
+        <li><a class="nav-link scrollto {{ Request::segment(1) === 'pengumumanHome' ? 'active' : null }}" href="{{ url('/pengumumanHome') }}">Pengumuman</a></li>
+        <li><a class="nav-link scrollto {{ Request::segment(1) === 'galeri' ? 'active' : null }}" href="{{ url('/galeri') }}">Galeri</a></li>
+        <li><a class="nav-link scrollto {{ Request::segment(1) === 'jadwal' ? 'active' : null }}" href="{{ url('/jadwal') }}">Jadwal</a></li>
+        <li><a class="nav-link scrollto {{ Request::segment(1) === 'tentang' ? 'active' : null }}" href="{{ url('/tentang') }}">Tentang</a></li> 
       </ul>
       <i class="fas fa-bars mobile-nav-toggle"></i>
     </nav><!-- .navbar -->

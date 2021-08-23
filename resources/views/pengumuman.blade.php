@@ -26,9 +26,9 @@
                                 <div class="card-body">
                                     <h3 style="color: #050607;"><a href="{{ route('pengumuman-show', $data) }}"><b>{{ $data->title }}</b></a></h3>
                                     <small style="color: #9EAAA8"><i>{{ $data->category }}</i></small><br><br>
-                                    <p style="color: #4F5551;">{!! Str::limit($data->deskripsi, 50) !!}</p>
+                                    <p>{!! Str::limit($data->deskripsi, 70) !!}</p>
 
-                                    <a href="#" style="color: #083197;">lihat selengkapnya </a>
+                                    <a href="{{ route('pengumuman-show', $data) }}" style="color: #083197;">lihat selengkapnya </a>
                                 </div>
                             </div><br>
                         </div>

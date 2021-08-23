@@ -28,7 +28,7 @@
 
                     <div class="form-group">
                         <label for="">Isi Pengumuman</label>
-                        <textarea class="form-control" name="deskripsi" required rows="3" id="deskripsi">
+                        <textarea class="form-control" name="deskripsi" required id="deskripsi">
                                 @php
                                     echo $pengumuman->deskripsi;
                                 @endphp
@@ -47,12 +47,8 @@
 
     </div>
 
-    <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <script>
-        ClassicEditor
-            .create(document.querySelector('#deskripsi'))
-            .catch(error => {
-                console.error(error);
-            });
+        CKEDITOR.replace( 'deskripsi' );
     </script>
 @endsection
