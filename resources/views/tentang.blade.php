@@ -626,7 +626,7 @@
                                 </div>
                             </div>
                             <div class="member-info">
-                                <h4>Tri Putra Jaya</h4>
+                                <h4>Adisaputra Zidha Noorizki</h4>
                                 <span>BAPENAS</span>
                             </div>
                         </div>
